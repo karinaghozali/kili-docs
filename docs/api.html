@@ -1,0 +1,167 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Getting started · Kili Docs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;Here is a list of API function that you can access from our endpoint:&lt;/p&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Getting started · Kili Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://kili-technology.github.io/kili-docs/"/><meta property="og:description" content="&lt;p&gt;Here is a list of API function that you can access from our endpoint:&lt;/p&gt;
+"/><meta property="og:image" content="https://kili-technology.github.io/kili-docs/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://kili-technology.github.io/kili-docs/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/kili-docs/img/favicon.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://kili-technology.github.io/kili-docs/blog/atom.xml" title="Kili Docs Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://kili-technology.github.io/kili-docs/blog/feed.xml" title="Kili Docs Blog RSS Feed"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/kili-docs/js/scrollSpy.js"></script><link rel="stylesheet" href="/kili-docs/css/main.css"/><script src="/kili-docs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/kili-docs/"><img class="logo" src="/kili-docs/img/favicon.png" alt="Kili Docs"/><h2 class="headerTitleWithLogo">Kili Docs</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/kili-docs/docs/doc1" target="_self">Docs</a></li><li class="siteNavGroupActive siteNavItemActive"><a href="/kili-docs/docs/api" target="_self">API</a></li><li class=""><a href="/kili-docs/help" target="_self">Help</a></li><li class=""><a href="/kili-docs/blog/" target="_self">Blog</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Kili API</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Kili API</h3><ul class=""><li class="navListItem navListItemActive"><a class="navItem" href="/kili-docs/docs/api">Getting started</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Getting started</h1></header><article><div><span><p>Here is a list of API function that you can access from our endpoint:</p>
+<p><a href="https://cloud.kili-technology.com/api/label/graphql">https://cloud.kili-technology.com/api/label/graphql</a></p>
+<h2><a class="anchor" aria-hidden="true" id="mutations-resolvers"></a><a href="#mutations-resolvers" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Mutations Resolvers</h2>
+<p>Mutations are used to insert data into Kili database or alter data already in
+Kili database.</p>
+<h3><a class="anchor" aria-hidden="true" id="createorganization"></a><a href="#createorganization" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CreateOrganization</h3>
+<p>Here is an example how to create an organization:</p>
+<pre><code class="hljs">mutation {
+  createOrganization(
+    name: &quot;Example Corp&quot;
+    address: &quot;1 avenue des Champs Elysées&quot;
+    zipCode: &quot;75008&quot;
+    city: &quot;Paris&quot;
+    country: &quot;France&quot;
+  ) {
+    id
+  }
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="createuser"></a><a href="#createuser" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CreateUser</h3>
+<p>Here is an example:</p>
+<pre><code class="hljs">mutation {
+    createUser(
+        name: &quot;John Smith&quot;
+        email: &quot;john.smith@example.com&quot;
+        password: &quot;******&quot;
+        phone: &quot;&quot;
+        organizationID: &quot;Example Corp&quot;
+        organizationRole: USER
+    ) {
+        id
+    }
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="createproject"></a><a href="#createproject" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CreateProject</h3>
+<p>Here is an example:</p>
+<pre><code class="hljs">mutation{
+    createProject(
+        userID: &quot;user-id-returned-by-previous-mutation&quot;
+    )
+    {
+        id
+    }
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="updateproject"></a><a href="#updateproject" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>UpdateProject</h3>
+<p>Here is an example:</p>
+<pre><code class="hljs">mutation {
+    updateProject(
+        projectID: &quot;project-id-returned-by-previous-mutation&quot;
+        title: &quot;My Project&quot;
+        description: &quot;This is a beautiful project&quot;
+        creationActiveStep: 0
+        creationCompleted: [0, 1, 2, 3, 4, 5, 6]
+        creationSkipped: []
+        interfaceCategory: {{ project_interface_category }}
+        inputType: TEXT
+        interfaceTitle: null
+        interfaceDescription: null
+        interfaceUrl: null
+        outsource: false
+        useConsensus: false
+        consensusTotCoverage: 0
+        minConsensusSize: 0
+        maxWorkerCount: 4
+        minAgreement: 66
+        useHoneyPot: false
+        instructions: null
+        modelTitle: &quot;&quot;
+        modelDescription: &quot;&quot;
+        modelUrl: &quot;&quot;
+    )
+    {
+        id
+    }
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="query-resolvers"></a><a href="#query-resolvers" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Query Resolvers</h2>
+<h3><a class="anchor" aria-hidden="true" id="getprojects"></a><a href="#getprojects" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>GetProjects</h3>
+<p>Here is an example:</p>
+<pre><code class="hljs">query {
+    getProjects(
+        userID: &quot;user-id&quot;
+    )
+    {
+        id
+    }
+}
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#mutations-resolvers">Mutations Resolvers</a><ul class="toc-headings"><li><a href="#createorganization">CreateOrganization</a></li><li><a href="#createuser">CreateUser</a></li><li><a href="#createproject">CreateProject</a></li><li><a href="#updateproject">UpdateProject</a></li></ul></li><li><a href="#query-resolvers">Query Resolvers</a><ul class="toc-headings"><li><a href="#getprojects">GetProjects</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/kili-docs/" class="nav-home"><img src="/kili-docs/img/favicon.png" alt="Kili Docs" width="66" height="58"/></a><div><h5>Docs</h5><a href="/kili-docs/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/kili-docs/docs/en/doc2.html">Guides (or other categories)</a><a href="/kili-docs/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/kili-docs/en/users.html">User Showcase</a><a href="https://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/kili-docs/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/kili-docs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Your Name or Your Company Name</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '95b3171464f58a54ef51d35766e154a3',
+                indexName: 'kili-docs',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>
