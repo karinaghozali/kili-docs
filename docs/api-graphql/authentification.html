@@ -63,20 +63,12 @@
 <p>L'API de Kili sécurise toutes les requêtes et mutations avec des jetons JWT.</p>
 <p>Pour utiliser GraphQL, vous devez:</p>
 <ul>
-<li>Vous authentifier via le résolveur <code>signIn</code>, afin de récupérer le jeton d'authentification:</li>
+<li>Vous authentifier via le résolveur <code>signIn</code>, afin de récupérer un jeton d'authentification.
+Votre mot de passe peut être omis si vous le passez dans la variable d'environnement <code>KILI_USER_PASSWORD</code> :</li>
 </ul>
-<pre><code class="hljs css language-python"><span class="hljs-keyword">from</span> graphqlclient <span class="hljs-keyword">import</span> GraphQLClient
-<span class="hljs-keyword">import</span> json
+<pre><code class="hljs css language-python"><span class="hljs-keyword">from</span> kili.authentication <span class="hljs-keyword">import</span> authenticate
 
-<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">authenticate</span><span class="hljs-params">(email, password)</span>:</span>
-    client = GraphQLClient(<span class="hljs-string">'https://cloud.kili-technology.com/api/label/graphql'</span>)
-    auth_payload = signin(client, email, password)
-    api_token = auth_payload[<span class="hljs-string">'token'</span>]
-    client.inject_token(<span class="hljs-string">'Bearer: '</span> + api_token)
-    user_id = auth_payload[<span class="hljs-string">'user'</span>][<span class="hljs-string">'id'</span>]
-    <span class="hljs-keyword">return</span> client, user_id
-
-client, user_id = authenticate(<span class="hljs-string">'MY_EMAIL'</span>, <span class="hljs-string">'MY_ADDRESS'</span>)
+client, user_id = authenticate(<span class="hljs-string">'john.doe@facebook.com'</span>)
 </code></pre>
 <ul>
 <li>Lancer la mutation/requête souhaitée (voir les sections suivantes):</li>
