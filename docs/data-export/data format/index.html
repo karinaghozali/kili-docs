@@ -1,0 +1,109 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Data format · Kili Docs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;The default export type is a JSON, and the format is that of the API&lt;/p&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Data format · Kili Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://kili-technology.github.io/kili-docs/"/><meta property="og:description" content="&lt;p&gt;The default export type is a JSON, and the format is that of the API&lt;/p&gt;
+"/><meta property="og:image" content="https://kili-technology.github.io/kili-docs/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://kili-technology.github.io/kili-docs/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/kili-docs/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/kili-docs/js/scrollSpy.js"></script><link rel="stylesheet" href="/kili-docs/css/main.css"/><script src="/kili-docs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/kili-docs/"><img class="logo" src="/kili-docs/img/favicon.png" alt="Kili Docs"/><h2 class="headerTitleWithLogo">Kili Docs</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"></ul></nav></div></header></div></div><div class="navPusher singleRowMobileNav"><div class="docMainWrapper wrapper"><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Data format</h1></header><article><div><span><p>The default export type is a JSON, and the format is that of the API
+Google.</p>
+<p>The functionality allows you to export all the data from Kili
+Technology.</p>
+<p>The export is a list of assets. Each asset is structured from the
+as follows:</p>
+<ul>
+<li><p>Idea: Unique identifier of the Asset in the Kili database</p></li>
+<li><p>Content: Content of the Asset or URL to the Asset.</p></li>
+<li><p><code>createdAt</code>: Date of creation of the Asset.</p></li>
+<li><p><code>externalId</code>: External ID of the Asset, filled in when loading
+Asset.</p></li>
+<li><p>Instructions: List of label annotation annotations. See
+detail below.</p></li>
+<li><p><code>isHoneypot</code>: Indicates whether this asset is a Honeypot.</p></li>
+<li><p>PhoneypotMark: If this Asset is a Honeypot, average of the
+honeypots obtained by the annotators on this Asset. No one else.</p></li>
+<li><p><code>isUsedForConsensus': in the case of the use of consensus as a quality indicator for the project, this field indicates that the asset is retained to be annotated by</code>n` annotators.</p></li>
+<li><p>ConsensusMark: in the case of Asset used for consensus, agreement note
+between the annotators</p></li>
+<li><p>Instruction: Indicates whether this Asset is part of the
+instructions.</p></li>
+<li><p>Status: Status of the asset. Can take the values: TODO,
+ONGOING, LABELED, REVIEWED</p></li>
+<li><p><code>updatedAt</code>: Date of the last modification of the Asset</p></li>
+</ul>
+<ul>
+<li><p>Labels: The list of asset labels: each label is structured as follows</p>
+<ul>
+<li><p>Idea: Unique identifier of the Label in the Kili database</p></li>
+<li><p><code>createdAt</code>: date of creation of the Label</p></li>
+<li><p><code>honeypotMark</code>: in the case of Honeypot Asset, chord note
+between the labeling and the target. In the case of an Asset that is not
+no Honeypot type, the field is null.</p></li>
+<li><p><code>jsonResponse</code>: List of label annotations. See detail
+lower.</p></li>
+<li><p><code>labelType</code>: Type of label used to identify if the label is a prediction
+(made by a model), an ordinary label (made by an annotator) or a journal
+(carried out by a reviewer). Can take the following values:
+<code>PREDICTION</code>, <code>DEFAULT</code>, <code>REVIEW</code></p></li>
+<li><p>TotalSecondsToLabel: Duration of the labeling, expressed in s.</p></li>
+</ul></li>
+</ul>
+<ul>
+<li><p>Outside: Person who created the Label</p>
+<ul>
+<li><p><code>id</code>: ID in Kili of the author of the Label</p></li>
+<li><p><code>email</code>: Name of the author of the Label</p></li>
+<li><p><code>name</code>: Email address of the author of the Label</p></li>
+</ul></li>
+</ul>
+<p><code>jsonResponse</code> is a JSON character string that contains the list of
+annotations. Kili annotations closely follow the Google format:</p>
+<ul>
+<li><p>for the image:
+<a href="https://cloud.google.com/vision/docs/detecting-logos">https://cloud.google.com/vision/docs/detecting-logos</a></p></li>
+<li><p>for the recognition of named entities:
+<a href="https://cloud.google.com/natural-language/docs/analyzing-entities">https://cloud.google.com/natural-language/docs/analyzing-entities</a></p></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="image"></a><a href="#image" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Image</h2>
+<ul>
+<li><p>Idea: Unique identifier of the Label in the Kili data system</p></li>
+<li><p>Score: When a pre-annotation model is used, the score is
+confidence in object detection</p></li>
+<li><p>Description: Name of the object</p></li>
+<li><p>IsOccluded: Boolean variable indicating if the object is blocked</p></li>
+<li><p><code>isCut</code>: Boolean variable indicating if the object is cut by a
+image edge</p></li>
+<li><p><code>boundingPoly</code>: polygon of the object contour</p>
+<ul>
+<li><p><code>vertices</code>: list of vertices of the polygon. In the case of a
+bounding box, 4 vertices</p>
+<ul>
+<li><p><code>x</code>: abscissa of the vertex position from top left and
+expressed as a percentage of the total image size</p></li>
+<li><p>y: ordinate of the vertex position from top left and
+expressed as a percentage of the total image size</p></li>
+</ul></li>
+</ul></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="ner"></a><a href="#ner" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>NER</h2>
+<ul>
+<li><p>Text: Document content seen by the interface / NER model</p></li>
+<li><p>Entities: List of entities, including the following attributes</p>
+<ul>
+<li><p><code>name</code>: Name of the entity</p></li>
+<li><p>Salience: The salience score of the entity, if provided by the
+underlying model. 1 in the case of manual annotation.</p></li>
+<li><p><code>type</code>: Type of the entity.</p></li>
+<li><p>Mentions: List of places where the entity is mentioned in the
+text</p>
+<ul>
+<li><p><code>id</code>: id of the mention</p></li>
+<li><p><code>text</code>:</p>
+<ul>
+<li><p><code>beginOffset</code>: position of the entity mention</p></li>
+<li><p><code>content</code>: content of the mention</p></li>
+</ul></li>
+<li><p>Type: Type of the entity mention. Today, is equal
+the type of the entity</p></li>
+<li><p><code>groups</code>: In the case of an annotation with grouping of
+entities, list of group names to which an entity belongs.
+Translated with <a href="http://www.DeepL.com/Translator">www.DeepL.com/Translator</a> (free version)</p></li>
+</ul></li>
+</ul></li>
+</ul>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#image">Image</a></li><li><a href="#ner">NER</a></li></ul></nav></div></div></body></html>
