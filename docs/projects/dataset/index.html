@@ -64,16 +64,18 @@
 <li><p>to filter on the data in order to analyze it</p></li>
 <li><p>to export the data</p></li>
 </ul>
-<h2><a class="anchor" aria-hidden="true" id="view-labels"></a><a href="#view-labels" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>View labels</h2>
-<p>By default we reach the &quot;Labels&quot; submenu, which allows us to
-view labels, annotator, time spent annotating, status
-of the asset, and the quality mettrics.</p>
-<p><img src="/kili-docs/img/doc1/image7.png" alt=""></p>
 <h2><a class="anchor" aria-hidden="true" id="view-assets"></a><a href="#view-assets" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>View assets</h2>
-<p>Thanks to &quot;Assets&quot;, we can visualize the list of assets, annotators
-who have worked on asset annotation, status, and metrics
-at the asset level.</p>
+<p>Thanks to &quot;Assets&quot;, we can visualize the list of assets, priority (for active learning), annotators
+who have worked on asset annotation, status, and metrics (duration, consensus, honeypot)
+at the asset level.
+From here, you can also search your assets.</p>
 <p><img src="/kili-docs/img/doc1/image8.png" alt=""></p>
+<h2><a class="anchor" aria-hidden="true" id="view-labels"></a><a href="#view-labels" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>View labels</h2>
+<p>Thanks to &quot;Labels&quot; submenu, which allows us to
+view labels,label type (prediction if made by a model, default if made by a human) annotator, time spent annotating, status
+of the asset, and the quality metrics.
+From here, you can also search your labels.</p>
+<p><img src="/kili-docs/img/doc1/image7.png" alt=""></p>
 <h2><a class="anchor" aria-hidden="true" id="asset-processing-workflow"></a><a href="#asset-processing-workflow" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Asset processing workflow</h2>
 <p>There are 4 status</p>
 <ul>
@@ -82,8 +84,8 @@ at the asset level.</p>
 when there is a consensus, awaiting processing by others
 annotators.</p></li>
 <li><p>LABELED: the asset has been annotated by an annotator, or when there is
-a consensus, by the different annotators</p></li>
+a consensus, by the different annotators.</p></li>
 <li><p>REVIEWED: at least one of the labels of an asset has gone through the
-Review process</p></li>
+Review process.</p></li>
 </ul>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/kili-docs/docs/projects/project-overview"><span class="arrow-prev">← </span><span>Project overview</span></a><a class="docs-next button" href="/kili-docs/docs/projects/audit-labelers"><span>Audit labelers</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#view-labels">View labels</a></li><li><a href="#view-assets">View assets</a></li><li><a href="#asset-processing-workflow">Asset processing workflow</a></li></ul></nav></div></div></body></html>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/kili-docs/docs/projects/project-overview"><span class="arrow-prev">← </span><span>Project overview</span></a><a class="docs-next button" href="/kili-docs/docs/projects/audit-labelers"><span>Audit labelers</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#view-assets">View assets</a></li><li><a href="#view-labels">View labels</a></li><li><a href="#asset-processing-workflow">Asset processing workflow</a></li></ul></nav></div></div></body></html>
