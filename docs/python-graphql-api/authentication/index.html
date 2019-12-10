@@ -68,9 +68,11 @@
 <li>Authenticate via the <code>signIn</code> resolver, in order to retrieve an authentication token.
 Your password can be omitted if you pass it in the <code>KILI_USER_PASSWORD</code> environment variable:</li>
 </ul>
-<pre><code class="hljs css language-python"><span class="hljs-keyword">from</span> kili.authentication <span class="hljs-keyword">import</span> authenticate
+<pre><code class="hljs css language-python"><span class="hljs-keyword">from</span> kili.authentication <span class="hljs-keyword">import</span> KiliAuth
+<span class="hljs-keyword">from</span> kili.playground <span class="hljs-keyword">import</span> Playground
 
-client, user_id = authenticate(<span class="hljs-string">'john.doe@facebook.com'</span>)
+kauth = KiliAuth(email=<span class="hljs-string">'john.doe@facebook.com'</span>, password=os.getenv(<span class="hljs-string">'KILI_USER_PASSWORD'</span>))
+playground = Playground(kauth)
 </code></pre>
 <ul>
 <li>Initiate the desired transfer/request (see next sections):</li>
@@ -80,15 +82,15 @@ client, user_id = authenticate(<span class="hljs-string">'john.doe@facebook.com'
 <tr><th>Data modification action</th><th>Function signature</th></tr>
 </thead>
 <tbody>
-<tr><td>Create a user</td><td><code>create_user(client, name, email, password, phone, organization_id, organization_role)</code></td></tr>
-<tr><td>Create a project</td><td><code>create_project(client, title, description, tool_type, use_honeypot, interface_json_settings)</code></td></tr>
-<tr><td>Delete a project</td><td><code>delete_project(client, project_id)</code></td></tr>
-<tr><td>Modify properties of a project</td><td><code>update_properties_in_project(client, project_id, min_consensus_size=None, consensus_tot_coverage=None)</code></td></tr>
-<tr><td>Append a user to a project</td><td><code>append_to_roles(client, project_id, user_email, role)</code></td></tr>
-<tr><td>Create a bulk of assets (image, text)</td><td><code>create_assets(client, project_id, contents, external_ids)</code></td></tr>
-<tr><td>Delete assets</td><td><code>delete_assets_by_external_id(client, project_id, external_id)</code></td></tr>
-<tr><td>Turn an asset into a honeypot</td><td><code>create_honeypot(client, asset_id, json_response)</code></td></tr>
-<tr><td>Push a prediction to be labeled</td><td><code>create_prediction(client, asset_id, json_response)</code></td></tr>
+<tr><td>Create a user</td><td><code>create_user(name, email, password, phone, organization_id, organization_role)</code></td></tr>
+<tr><td>Create a project</td><td><code>create_project(title, description, tool_type, use_honeypot, interface_json_settings)</code></td></tr>
+<tr><td>Delete a project</td><td><code>delete_project(project_id)</code></td></tr>
+<tr><td>Modify properties of a project</td><td><code>update_properties_in_project(project_id, min_consensus_size=None, consensus_tot_coverage=None)</code></td></tr>
+<tr><td>Append a user to a project</td><td><code>append_to_roles(project_id, user_email, role)</code></td></tr>
+<tr><td>Create a bulk of assets (image, text)</td><td><code>create_assets(project_id, contents, external_ids)</code></td></tr>
+<tr><td>Delete assets</td><td><code>delete_assets_by_external_id(project_id, external_id)</code></td></tr>
+<tr><td>Turn an asset into a honeypot</td><td><code>create_honeypot(asset_id, json_response)</code></td></tr>
+<tr><td>Push a prediction to be labeled</td><td><code>create_prediction(asset_id, json_response)</code></td></tr>
 </tbody>
 </table>
 <table>
@@ -96,9 +98,9 @@ client, user_id = authenticate(<span class="hljs-string">'john.doe@facebook.com'
 <tr><th>Data query action</th><th>Function signature</th></tr>
 </thead>
 <tbody>
-<tr><td>Get the list of my projects</td><td><code>get_projects(client, user_id)</code></td></tr>
-<tr><td>Get a specific asset</td><td><code>get_assets_by_external_id(client, project_id, external_id)</code></td></tr>
-<tr><td>Export all assets and labels</td><td><code>export_assets(client, project_id)</code></td></tr>
+<tr><td>Get the list of my projects</td><td><code>get_projects(user_id)</code></td></tr>
+<tr><td>Get a specific asset</td><td><code>get_assets_by_external_id(project_id, external_id)</code></td></tr>
+<tr><td>Export all assets and labels</td><td><code>export_assets(project_id)</code></td></tr>
 </tbody>
 </table>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/kili-docs/docs/python-graphql-api/data-model"><span class="arrow-prev">← </span><span>Previous</span></a><a class="docs-next button" href="/kili-docs/docs/python-graphql-api/create-a-project"><span>Create a project</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#prerequisites">Prerequisites</a></li><li><a href="#authentication">Authentication</a></li></ul></nav></div></div></body></html>
