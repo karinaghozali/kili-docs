@@ -72,37 +72,41 @@ From here, you can also search your assets.</p>
 <p><img src="/kili-docs/img/doc1/image8.png" alt=""></p>
 <h2><a class="anchor" aria-hidden="true" id="search-assets"></a><a href="#search-assets" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Search assets</h2>
 <p>To dive into your assets, you can use the search bar.
-To combine filters, just add a space between to terms. For instance &quot;status:labeled consensus&lt;80&quot;</p>
+To combine filters, just add a space between to terms. For instance: <code>status:labeled consensus&lt;80</code>.</p>
 <ul>
-<li>External ID = externalId:XX</li>
+<li>External ID = <code>externalId:image 1.png, image 2.png</code></li>
 <li>Creation Date = not searchable</li>
 <li>Priority = not searchable</li>
-<li>Labeled by = labeledBy:XXX</li>
+<li>Labeled by = <code>labeledBy:John Doe, Jane Doe</code></li>
 <li>Duration = not searchable</li>
-<li>Status = status:todo/ongoing/labeled/reviewed</li>
-<li>Honeypot = honeypot&lt;10 // honeypot&gt;10</li>
-<li>Consensus = consensus&lt;90 // consensus&gt;90</li>
+<li>Status = <code>status:todo</code> | <code>status:ongoing</code> | <code>status:labeled</code> | <code>status:reviewed</code></li>
+<li>Honeypot = <code>honeypot&lt;10</code> | <code>honeypot&gt;10</code></li>
+<li>Consensus = <code>consensus&lt;90</code> | <code>consensus&gt;90</code></li>
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="view-labels"></a><a href="#view-labels" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>View labels</h2>
-<p>Thanks to &quot;Labels&quot; submenu, which allows us to
-view labels,label type (prediction if made by a model, default if made by a human) annotator, time spent annotating, status
-of the asset, and the quality metrics.
-From here, you can also search your labels.</p>
+<p>&quot;Labels&quot; submenu allows you to view labels:</p>
+<ul>
+<li>label type (<code>prediction</code> if made by a model, <code>default</code> if made by a human),</li>
+<li>annotators,</li>
+<li>time spent annotating,</li>
+<li>status of the asset, and</li>
+<li>quality metrics.</li>
+</ul>
+<p>From here, you can also search your labels.</p>
 <p><img src="/kili-docs/img/doc1/image7.png" alt=""></p>
 <h2><a class="anchor" aria-hidden="true" id="search-labels"></a><a href="#search-labels" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Search labels</h2>
 <p>To dive into your labels, you can use the search bar.
 To combine filters, just add a space between to terms. For instance &quot;status:labeled consensus&lt;80&quot;</p>
 <ul>
-<li>External ID = <code>externalId:XXX</code></li>
-<li>Creation Date = <code>creationDate&gt;25/11/2019</code> // <code>creationDate&lt;25/11/2019</code></li>
-<li>Type = <code>type:prediction</code> / <code>default</code> / <code>review</code></li>
+<li>External ID = <code>externalId:image 1.png, image2.png</code></li>
+<li>Creation Date = <code>creationDate&gt;25/11/2019</code> | <code>creationDate&lt;25/11/2019</code></li>
+<li>Type = <code>type:prediction</code> | <code>type:default</code> | <code>type:review</code></li>
 <li>Labeled by = <code>labeledBy:XXX</code></li>
 <li>Duration = not searchable</li>
-<li>Status = <code>status:todo</code> / <code>ongoing</code> / <code>labeled</code> / <code>reviewed</code></li>
-<li>Honeypot = <code>labelHoneypot&lt;10</code> // <code>labelHoneypot&gt;10</code></li>
-<li>Consensus = <code>consensus&lt;90</code> // <code>consensus&gt;90</code></li>
-<li>Skipped = <code>skipped:true</code> / <code>false</code></li>
-<li>Type = <code>type:PREDICTIONS</code> // <code>type:DEFAULT,REVIEW</code></li>
+<li>Status = <code>status:todo</code> | <code>status:ongoing</code> | <code>status:labeled</code> | <code>status:reviewed</code></li>
+<li>Honeypot = <code>labelHoneypot&lt;10</code> | <code>labelHoneypot&gt;10</code></li>
+<li>Consensus = <code>consensus&lt;90</code> | <code>consensus&gt;90</code></li>
+<li>Skipped = <code>skipped:true</code> | <code>skipped:false</code></li>
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="asset-processing-workflow"></a><a href="#asset-processing-workflow" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Asset processing workflow</h2>
 <p>There are 4 status</p>

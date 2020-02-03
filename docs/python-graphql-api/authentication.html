@@ -87,7 +87,7 @@ playground = Playground(kauth)
 <tr><td>Delete a project</td><td><code>delete_project(project_id)</code></td></tr>
 <tr><td>Modify properties of a project</td><td><code>update_properties_in_project(project_id, min_consensus_size=None, consensus_tot_coverage=None)</code></td></tr>
 <tr><td>Append a user to a project</td><td><code>append_to_roles(project_id, user_email, role)</code></td></tr>
-<tr><td>Create a bulk of assets (image, text)</td><td><code>create_assets(project_id, contents, external_ids)</code></td></tr>
+<tr><td>Create a bulk of assets (image, text)</td><td><code>append_many_to_dataset(project_id, content_array, external_id_array)</code></td></tr>
 <tr><td>Delete assets</td><td><code>delete_assets_by_external_id(project_id, external_id)</code></td></tr>
 <tr><td>Turn an asset into a honeypot</td><td><code>create_honeypot(asset_id, json_response)</code></td></tr>
 <tr><td>Push a prediction to be labeled</td><td><code>create_prediction(asset_id, json_response)</code></td></tr>
